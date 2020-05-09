@@ -22,8 +22,5 @@ class MainActivity : AppCompatActivity() {
         val num3 = 20
         Log.d("kotlintest","num2 < num3 = " + (num2 < num3))
 
-        var num = 10
-        Log.d("kotlintest", "" + num)
-
     }
 }
