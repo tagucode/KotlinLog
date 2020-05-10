@@ -3,7 +3,6 @@ package jp.techacademy.satoshi.kotlinlog
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log  //追加した行
-import kotlinx.android.synthetic.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -107,5 +106,28 @@ class MainActivity : AppCompatActivity() {
         for (i in 0 until 6 step 2){
             Log.d("kotlintest","for文の" + i + "回目")
         }
+
+        //Array<int>型の配列が作成される
+        val points = arrayOf(10,6,15,23,17)
+
+        for (i in points){
+        Log.d("kotlintest2",i.toString())
+        }
+
+        //例外処理
+        val num8 = 100
+        val num9 = 0
+        var ans = 0
+
+        try {
+            ans = num8 / num9
+        } catch (e: Exception) {
+            Log.d("kotlintest2","0で割ろうとしました")
+        // 例外情報から、メッセージを表示
+            Log.d("kotlintest2",e.message)
+        } finally {
+            Log.d("kotlintest2","ans = " + ans.toString())
+        }
+
     }
 }
