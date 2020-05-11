@@ -129,5 +129,41 @@ class MainActivity : AppCompatActivity() {
             Log.d("kotlintest2","ans = " + ans.toString())
         }
 
+        //関数テスト
+        total(10,100)
+        total(100,200)
+
+        val t = total(50,1000)
+        Log.d("kotlintest3",t.toString())
+
+        //ラムダ式テスト
+        val lmd = {x:Int , y:Int -> x + y }
+        val lmdans = lmd(100,200)
+        Log.d("kotlintest3",lmdans.toString())
+
+        //ラムダ式1行 便利！
+        val lmd1 = {x: Int,y:Int -> x + y }(500,300)
+        Log.d("kotlintest3",lmd1.toString())
+
+        //無名関数　ラムダ式の方が主流？使いづらい
+        val noname = fun(x:Int, y:Int):Int {return x + y}
+        val nonameans = noname(500,800)
+        Log.d("kotlintest3",nonameans.toString())
+
+        val noname1ans = fun(x:Int ,y:Int):Int {return x + y}(200, 300)
+        Log.d("kotlintest3",noname1ans.toString())
     }
+
+    //関数作成
+    private fun total(first: Int,last: Int):Int {
+        var sum = 0
+        for (i in first..last){
+            sum += i
+        }
+        Log.d("kotlintest2",sum.toString())
+
+        return sum
+    }
+
 }
+
